@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import * as FilterService from '../services/filters';
 import * as PlaylistService from '../services/playlists';
-import { IFilterResponse } from '../interfaces';
+import { IFilterResponse, IPlaylistResponse } from '../interfaces';
 
 function HomePage() {
 
     const [responseFilter, setResponseFilter] = useState<IFilterResponse>();
-    const [responsePlaylist, setResponsePlaylist] = useState();
+    const [responsePlaylist, setResponsePlaylist] = useState<IPlaylistResponse>();
 
     useEffect(() => {
         const _getFilters = async () => {
@@ -15,7 +15,7 @@ function HomePage() {
         }
 
         const _getPlaylists = async () => {
-            const response = await PlaylistService.getPlaylists();
+            const response : IPlaylistResponse = await PlaylistService.getPlaylists();
             setResponsePlaylist(response);
         }
         _getPlaylists();
@@ -24,7 +24,9 @@ function HomePage() {
 
     return (
         <>
-           HomePage App
+           {responsePlaylist && responsePlaylist.playlists.items.map((item) => (
+               <img src={item.images[0].url} alt={item.id} />
+            ))}
         </>
     );
 }
