@@ -1,5 +1,5 @@
-import { Card } from './card';
+import { Playlist } from './playlist';
 
 export {
-    Card
+    Playlist
 };
