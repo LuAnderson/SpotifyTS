@@ -5,7 +5,7 @@ export interface IPlaylistResponse {
     }
 };
 
-interface IPlaylist {
+export interface IPlaylist {
     description: string;
     external_urls: {
         spotify: string

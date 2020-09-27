@@ -1,7 +1,8 @@
 import { IFilterResponse } from './filters';
-import { IPlaylistResponse } from './playlists';
+import { IPlaylistResponse, IPlaylist } from './playlists';
 
 export type {
     IFilterResponse,
-    IPlaylistResponse
+    IPlaylistResponse,
+    IPlaylist
 };
