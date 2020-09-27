@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import * as FilterService from '../services/filters';
+import { IFilterResponse } from '../interfaces';
+
+
 // import { Card } from '../components';
-
-interface IFilterResponse {
-    filters: IFilters[]
-};
-
-interface IFilters {
-    id: string;
-    name: string;
-    values?: Array<object>,
-    validation?: Array<object>
-};
 
 function HomePage() {
 
