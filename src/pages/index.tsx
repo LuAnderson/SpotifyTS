@@ -3,6 +3,8 @@ import * as FilterService from '../services/filters';
 import * as PlaylistService from '../services/playlists';
 import { IFilterResponse, IPlaylistResponse } from '../interfaces';
 
+import { Playlist } from '../components/playlist';
+
 function HomePage() {
 
     const [responseFilter, setResponseFilter] = useState<IFilterResponse>();
@@ -24,9 +26,9 @@ function HomePage() {
 
     return (
         <>
-           {responsePlaylist && responsePlaylist.playlists.items.map((item) => (
-               <img src={item.images[0].url} alt={item.id} />
-            ))}
+            {responsePlaylist && 
+                <Playlist data={responsePlaylist.playlists.items} />
+            }
         </>
     );
 }
