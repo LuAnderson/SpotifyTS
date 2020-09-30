@@ -12,12 +12,12 @@ function HomePage() {
 
     useEffect(() => {
         const _getFilters = async () => {
-            const response : IFilterResponse = await FilterService.getFilters();
+            const response = await FilterService.getFilters();
             setResponseFilter(response);
         }
 
         const _getPlaylists = async () => {
-            const response : IPlaylistResponse = await PlaylistService.getPlaylists();
+            const response = await PlaylistService.getPlaylists();
             setResponsePlaylist(response);
         }
         _getPlaylists();
