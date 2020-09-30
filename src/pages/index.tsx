@@ -3,7 +3,10 @@ import * as FilterService from '../services/filters';
 import * as PlaylistService from '../services/playlists';
 import { IFilterResponse, IPlaylistResponse } from '../interfaces';
 
-import { Playlist } from '../components/playlist';
+import { 
+    Playlist,
+    Search
+} from '../components';
 
 function HomePage() {
 
@@ -26,6 +29,7 @@ function HomePage() {
 
     return (
         <>
+            <Search />
             {responsePlaylist && 
                 <Playlist data={responsePlaylist.playlists.items} />
             }
